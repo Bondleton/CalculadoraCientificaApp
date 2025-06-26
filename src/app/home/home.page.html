@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Pantalla resultados -->
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-input readonly class="pantalla" placeholder="0" [(ngModel)]="pantalla"></ion-input>
+      </ion-col>
+    </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <!-- Botones de operaciones científicas -->
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="agregar('sin(')">sin</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="agregar('cos(')">cos</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="agregar('tan(')">tan</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="agregar('√(')">√</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="agregar('log(')">log</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="agregar('^')">^</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="agregar('%')">%</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="agregar(')')">)</ion-button></ion-col>
+      <ion-col><ion-button expand="block" class="igual" (click)="borrar()">C</ion-button></ion-col>
+    </ion-row>
+
+    <!-- Botones numéricos -->
+    <ion-row *ngFor="let fila of botonesNumericos">
+      <ion-col *ngFor="let num of fila">
+        <ion-button expand="block" (click)="agregar(num)">{{ num }}</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Botones de operaciones básicas -->
+    <ion-row>
+      <ion-col><ion-button class="basicas" expand="block" (click)="agregar('+')">+</ion-button></ion-col>
+      <ion-col><ion-button class="basicas" expand="block" (click)="agregar('-')">-</ion-button></ion-col>
+      <ion-col><ion-button class="basicas" expand="block" (click)="agregar('*')">×</ion-button></ion-col>
+      <ion-col><ion-button class="basicas" expand="block" (click)="agregar('/')">÷</ion-button></ion-col>
+    </ion-row>
+
+    <!-- Botón igual -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block" class="igual" (click)="calcular()">=</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

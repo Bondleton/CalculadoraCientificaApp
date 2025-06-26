@@ -25,3 +25,73 @@
 #container a {
   text-decoration: none;
 }
+
+
+// button {
+//   border-radius: 10px;
+//   background: linear-gradient(45deg, rgba(142, 197, 252, 1.000) 0.000%, rgba(141, 211, 255, 1.000) 25.000%, rgba(161, 216, 255, 1.000) 50.000%, rgba(193, 210, 255, 1.000) 75.000%, rgba(224, 195, 255, 1.000) 100.000%)
+// }
+
+:host {
+  // --background: linear-gradient(45deg, rgba(142, 197, 252, 1.000) 0%, rgba(141, 211, 255, 1.000) 25%, rgba(161, 216, 255, 1.000) 50%, rgba(193, 210, 255, 1.000) 75%, rgba(224, 195, 255, 1.000) 100%);
+  display: block;
+  height: 100%;
+}
+
+ion-content {
+  --background: none;
+  background: var(--background);
+  color: #fff;
+}
+
+/* Pantalla */
+.pantalla {
+  font-size: 28px;
+  text-align: right;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  height: 5rem;
+}
+
+/* Botones */
+ion-button {
+  --border-radius: 52px;
+  font-size: 18px;
+  height: 50px;
+  color: #fff;
+  --background: rgba(0, 0, 0, 0.25);
+  --background-hover: rgba(0, 0, 0, 0.35);
+  // --background-activated: rgba(0, 0, 0, 0.5);
+  --box-shadow: none;
+}
+
+ion-button.basicas {
+  border-radius: 50px;
+  color: #000000;
+  background: linear-gradient(45deg, rgba(142, 197, 252, 1.000) 0.000%, rgba(141, 211, 255, 1.000) 25.000%, rgba(161, 216, 255, 1.000) 50.000%, rgba(193, 210, 255, 1.000) 75.000%, rgba(224, 195, 255, 1.000) 100.000%),
+}
+
+
+/* Botón igual */
+.igual {
+  // background: linear-gradient(0deg, rgba(142, 197, 252, 1.000) 0.000%, rgba(141, 211, 255, 1.000) 25.000%, rgba(161, 216, 255, 1.000) 50.000%, rgba(193, 210, 255, 1.000) 75.000%, rgba(224, 195, 255, 1.000) 100.000%)
+  --background: rgb(156, 118, 197);
+  --background-hover: rgba(224, 195, 255, 1.000);
+  --background-activated: rgba(142, 197, 252, 1.000);
+}
+
+/* Botón borrar */
+ion-button[color="danger"] {
+  --background: #eb5757;
+  --background-hover: #e04848;
+  --background-activated: #cc3e3e;
+}
+
+/* Estilo más limpio en general */
+// ion-row {
+//   margin-top: 1px;
+// }
